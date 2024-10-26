@@ -1,0 +1,40 @@
+{
+  "name": "MJ_Prompt",
+  "description": "A json template for MJ Prompt",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "scenes": {
+        "type": "array",
+        "description": "Array of advertisement scenes",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "Unique identifier for the scene"
+            },
+            "appearance": {
+              "type": "integer",
+              "description": "Appearance indicator (0 for no car, 1 for car present)",
+              "enum": [0, 1]
+            },
+            "prompt_image": {
+              "type": "string",
+              "description": "Prompt for generating the scene image"
+            },
+            "prompt_video": {
+              "type": "string",
+              "description": "Prompt for generating the scene video"
+            }
+          },
+          "required": ["id", "appearance", "prompt_image", "prompt_video"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["scenes"],
+    "additionalProperties": false
+  }
+}
